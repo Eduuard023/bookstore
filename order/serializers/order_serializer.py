@@ -1,8 +1,10 @@
+
+
 from rest_framework import serializers
 
-from product.serializers import ProductSerializer
 from product.models import Product
 from order.models import Order
+from product.serializers.product_serializer import ProductSerializer
 
 
 class OrderSerializer(serializers.ModelSerializer):
@@ -16,7 +18,7 @@ class OrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
-        fields = ['product', 'user', 'total', 'product_id']
+        fields = ['product', 'total', 'user', 'product_id']
         extra_kwargs = {'product': {'required': False}}
 
     def create(self, validated_data):
