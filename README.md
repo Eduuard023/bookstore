@@ -1,1 +1,2 @@
-# bookstore
+Projeto Django EBAC
+Github Actions
